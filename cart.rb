@@ -14,6 +14,11 @@ class Cart
   end
 
   def total
+    ## Look at using reduce/inject
+    ## 
+    # @items.reduce(0) do |total, (item, quantity)|
+    #  total += item.price * quantity
+    # end
     total_amt = 0
     @items.each_pair do |item, quantity|
       total_amt += item.price * quantity
@@ -21,6 +26,7 @@ class Cart
     total_amt
   end
 
+  ## attr_reader :items
   def items
     @items
   end
